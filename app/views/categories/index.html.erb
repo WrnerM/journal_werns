@@ -23,3 +23,30 @@
 </table>
 
 <%= link_to "New Category", "/categories/new" %>
+
+<h1>Tasks to Finish for Today:</h1>
+
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Tasks</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% Task.tasks_today.each do |task| %>
+            <tr>
+                <td><%= task.id %></td>
+                <td><%= task.name %></td>
+                <td><%= link_to 'Edit', edit_category_task_path(task.category, task) %></td>
+                <td><%= link_to 'Show', category_task_path(task.category, task) %></td>
+                <td><%= button_to 'Delete', category_task_path(task.category, task), method: :delete  %></td>
+
+
+
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+

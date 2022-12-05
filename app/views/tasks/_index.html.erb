@@ -5,7 +5,7 @@
         <tr>
             <td>Task No.</td>
             <td>Task To Accomplish</td>
-
+            <td>Deadline</td>
         </tr>
     </thead>
 
@@ -14,6 +14,7 @@
             <tr>
                 <td><%= task.id %></td>
                 <td><%= task.name %></td>
+                <td><%= task.deadline.strftime "%B %d, %Y" %></td>
                 <td><%= button_to 'Delete', category_task_path(@category, task), method: :delete %></td>
                 <td><%= link_to 'Edit', edit_category_task_path(@category, task) %></td>
                 <td><%= link_to 'Show', category_task_path(@category, task) %></td>

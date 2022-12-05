@@ -1,10 +1,13 @@
 <h1><%= @task.name %></h1>
+<h4>Deadline:</h4>
+<p><%= @task.deadline.strftime "%B %d, %Y" %></p>
 
 <p>Description</p>
 
 <p><%= @task.description %></p>
 
-<td><%= link_to 'Edit', edit_category_task_path(@category, @task) %></td>
 
-<td><%= link_to 'Back', category_tasks_path %></td>
+<p><%= link_to 'Edit', edit_category_task_path(@category, @task) %></p>
+
+<p><%= link_to 'Back', category_tasks_path(@category) %></p>
 
