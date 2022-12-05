@@ -1,0 +1,15 @@
+<%= form_for(@category) do |f| %>
+
+    <h1>Edit Category</h1>
+
+    <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.submit %>
+        
+    </p>
+
+    <p><%= link_to 'Back', :back %></p>
+
+
+<% end %>

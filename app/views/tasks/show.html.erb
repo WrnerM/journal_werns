@@ -1,0 +1,10 @@
+<h1><%= @task.name %></h1>
+
+<p>Description</p>
+
+<p><%= @task.description %></p>
+
+<td><%= link_to 'Edit', edit_category_task_path(@category, @task) %></td>
+
+<td><%= link_to 'Back', category_tasks_path %></td>
+

@@ -1,0 +1,23 @@
+<%= form_for([@category, @task]) do |f| %>
+
+    <h1>Edit task</h1>
+
+    <p>
+        <%= f.label :name %><br/>
+        <%= f.text_field :name %>
+        <br/><br/>
+        
+        <%= f.label :description %><br/>
+        <%= f.text_field :description %>
+        <br/><br/>
+        
+        <%= f.submit %>
+
+        <td><%= link_to 'Back', category_tasks_path %></td>
+
+        
+    </p>
+
+
+
+<% end %>

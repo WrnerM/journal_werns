@@ -1,0 +1,10 @@
+<h1><%= @category.name %></h1>
+
+<td><%= button_to 'Delete', "/categories/#{@category.id}", method: :delete  %></td>
+<td><%= link_to 'Edit', "/categories/#{@category.id}/edit" %></td>
+<td><%= link_to 'Back to Categories', categories_path %></td>
+
+
+<%= render 'tasks/index' %>
+
+<%= link_to "New Task", new_category_task_path(@category) %>
