@@ -1,25 +1,67 @@
-<table>
-    <thead>
-        <tr>
-            <td>ID</td>
-            <td>Category</td>
-        </tr>
-    </thead>
 
-    <tbody>
-        <% @categories.each do |category| %>
+<div class="overflow-x-auto relative rounded-mt w-full">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 rounded-md">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-                <td><%= category.id %></td>
-                <td><%= category.name %></td>
-                <td><%= link_to 'Edit', "/categories/#{category.id}/edit" %></td>
-                <td><%= link_to 'Show', "/categories/#{category.id}" %></td>
-                <td><%= button_to 'Delete', "/categories/#{category.id}", method: :delete  %></td>
+                <td class="py-3 px-6">ID</td>
+                <td class="py-3 px-6">Category</td>
+                <td class="py-3 px-6"></td>
+                <td class="py-3 px-6"></td>
+                <td class="py-3 px-6"></td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @categories.each do |category| %>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= category.id %></td>
+                    <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= category.name %></td>
+                    <td class="py-3 px-6"><%= link_to 'Edit', "/categories/#{category.id}/edit" %></td>
+                    <td class="py-3 px-6"><%= link_to 'Show', "/categories/#{category.id}" %></td>
+                    <td class="py-3 px-6"><%= button_to 'Delete', "/categories/#{category.id}", method: :delete  %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+</div>
+
+<button class="bg-sky-500 hover:bg-sky-700 rounded-md"><%= link_to "New Category", "/categories/new" %></button>
+<br/><br/><br/><br/><br/><br/>
 
 
+<br/><br/><br/><br/>
+
+
+
+<div class="overflow-x-auto relative rounded-mt w-full" >
+
+    <h1>Tasks to Finish for Today:</h1>     
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 rounded-md">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <td class="py-3 px-6">ID</td>
+                <td class="py-3 px-6">Tasks</td>
+                <td class="py-3 px-6"></td>
+                <td class="py-3 px-6"></td>
+                <td class="py-3 px-6"></td>
 
             </tr>
-        <% end %>
-    </tbody>
-</table>
+        </thead>
 
-<%= link_to "New Category", "/categories/new" %>
+        <tbody>
+            <% Task.tasks_today.each do |task| %>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= task.id %></td>
+                    <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= task.name %></td>
+                    <td><%= link_to 'Edit', edit_category_task_path(task.category, task) %></td>
+                    <td><%= link_to 'Show', category_task_path(task.category, task) %></td>
+                    <td><%= button_to 'Delete', category_task_path(task.category, task), method: :delete  %></td>
+
+
+
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

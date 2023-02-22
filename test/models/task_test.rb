@@ -10,4 +10,9 @@ class TaskTest < ActiveSupport::TestCase
     assert_not task.save, "Saved Task without a name"
   end
 
+  test "should not save Task without description" do
+    task = Task.new
+    task.name = "try this task"
+    assert_not task.save, "Saved task without description"
+  end
 end

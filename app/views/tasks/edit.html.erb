@@ -11,6 +11,11 @@
         <%= f.text_field :description %>
         <br/><br/>
         
+        <%= f.label :deadline %><br/>
+        <%= f.datetime_field :deadline %>
+        <br/><br/>
+
+        
         <%= f.submit %>
 
         <td><%= link_to 'Back', category_tasks_path %></td>

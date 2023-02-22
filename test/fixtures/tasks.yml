@@ -4,8 +4,16 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one:
 # column: value
+  name: kahitano
+  description: anything
+  deadline: <%= 1.days.from_now %>
+  category: one
 #
-two: {}
+two:
 # column: value
+  name: kahitano
+  description: anything
+  deadline: <%= 1.days.from_now %>
+  category: one
