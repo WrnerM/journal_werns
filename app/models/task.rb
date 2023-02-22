@@ -9,6 +9,6 @@ class Task < ApplicationRecord
     belongs_to :category
 
     def self.tasks_today
-        Task.where(deadline: Time.now.beginning_of_day..Time.now.end_of_day).order(deadline: :desc)
+        Task.where(deadline: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).order(deadline: :desc)
     end
 end
